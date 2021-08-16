@@ -1,3 +1,3 @@
-# graph-provider-wrapper
+# Provider Wrappers
 
-Graph Provider Wrapper for @erc725/erc725.js
+- `GraphProviderWrapper` for @erc725/erc725.js (GraphQL)
