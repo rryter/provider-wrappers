@@ -42,13 +42,15 @@
     "node": ">=10"
   },
   "dependencies": {
-    "graphql-tag": "2.12.5",
-    "graphql": "15.5.1",
-    "@erc725/erc725.js": "0.6.1"
+    "@erc725/erc725.js": "0.6.1",
+    "graphql": "^15.5.1",
+    "graphql-request": "^3.5.0"
   },
   "devDependencies": {
     "@ava/typescript": "^1.1.1",
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/jest": "^27.0.1",
+    "jest": "^27.0.6",
     "@typescript-eslint/eslint-plugin": "^4.0.1",
     "@typescript-eslint/parser": "^4.0.1",
     "ava": "^3.12.1",

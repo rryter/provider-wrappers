@@ -1,13 +1,13 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { GraphQLClient } from 'graphql-request';
+
 import { queries } from './lib/queries';
 import { ProviderTypes } from './types/types';
-
 export class GraphProviderWrapper {
   type = ProviderTypes.GRAPH_QL;
-  provider: any;
+  graphQLClient: GraphQLClient;
 
-  constructor(provider: any) {
-    this.provider = provider;
+  constructor(url: string) {
+    this.graphQLClient = new GraphQLClient(url);
   }
   async getOwner(): Promise<string> {
     throw new Error(
@@ -22,7 +22,7 @@ export class GraphProviderWrapper {
     }
     // Get the value for the specific single key
     const query = queries.getDataByKey(address, keyOrKeys);
-    const result = await this.provider.query({ query });
+    const result = await this.graphQLClient.request(query);
     // Single out the first result as expected
     const ret =
       result.data[Object.keys(result.data)[0]][0] &&
@@ -32,7 +32,7 @@ export class GraphProviderWrapper {
 
   async getAllData(address: string) {
     const query = queries.getAllData(address);
-    const result = await this.provider.query({ query });
+    const result = await this.graphQLClient.request(query);
     // Return the data query array
     return result.data[Object.keys(result.data)[0]];
   }
