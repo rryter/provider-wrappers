@@ -1,6 +1,6 @@
 {
   "name": "@erc725/provider-wrappers",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Provider Wrappers for @erc725/erc725.js",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
